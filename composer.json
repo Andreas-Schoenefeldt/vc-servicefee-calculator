@@ -1,0 +1,14 @@
+{
+    "name": "schoenef/vc-servicefee-calculator",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": { "VCServiceFeeCalculator\\": "src" }
+    },
+    "authors": [
+        {
+            "name": "Andreas Schönefeldt",
+            "email": "schoenefeldt.andreas@gmail.com"
+        }
+    ],
+    "require": {}
+}
