@@ -45,6 +45,7 @@ class VCServiceFeeCalculator {
                 "value" => "Ø verwaltetes Vermögen",
                 "group" => __("Slider", Plugin::ID)
             ),
+            /*
             array(
                 "type" => "textfield",
                 "class" => "",
@@ -61,6 +62,7 @@ class VCServiceFeeCalculator {
                 "value" => "zu 0.45%",
                 "group" => __("Slider", Plugin::ID)
             ),
+            */
             array(
                 "type" => "textfield",
                 "class" => "",
@@ -88,11 +90,12 @@ class VCServiceFeeCalculator {
             array(
                 "type" => "textfield",
                 "class" => "",
-                "heading" => __("Slider From Range", Plugin::ID),
+                "heading" => __("Slider Start Value", Plugin::ID),
                 "param_name" => "slider_from_range",
                 "value" => "1350000",
                 "group" => __("Slider", Plugin::ID)
             ),
+            /*
             array(
                 "type" => "textfield",
                 "class" => "",
@@ -101,6 +104,7 @@ class VCServiceFeeCalculator {
                 "value" => "0.75",
                 "group" => __("Slider", Plugin::ID)
             )
+            */
         );
     }
 
