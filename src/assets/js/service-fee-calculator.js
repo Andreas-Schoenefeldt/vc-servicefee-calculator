@@ -7,6 +7,19 @@ const serviceRateBelowBorder = 0.0075;
 const serviceRateAboveBorder = 0.0045;
 const price_prefix = "CHF ";
 
+const formatNumber = function (number) {
+    let result = '';
+    let stringToFormat = number.toFixed(0);
+
+    while (stringToFormat.length > 0) {
+        let split = stringToFormat.substr(-3);
+        result = split + ' ' + result;
+        stringToFormat = stringToFormat.substring(0, stringToFormat.length - 3);
+    }
+
+    return result;
+};
+
 $(document).ready(function(){
     var rangeInput = $("#range_02");
     var xPrev = parseInt(rangeInput.data('slider_from_range'));
@@ -26,7 +39,7 @@ $(document).ready(function(){
             serviceFee = serviceFeeMin;
         }
 
-        $('.service-fee-text').html('Service fee p.a. ' + price_prefix + ' ' + serviceFee);
+        $('.service-fee-text').html('Service fee p.a. ' + price_prefix + ' ' + formatNumber(serviceFee));
 
         if (currentValue < borderAmount) {
             $(".price-data2").addClass("blur");
@@ -43,8 +56,8 @@ $(document).ready(function(){
             $(".per-annum").html(rate.toFixed(2) + "%");
         }
 
-        $(".irs-below-second").html(price_prefix + Math.min(borderAmount, currentValue) + ' zu ' + (serviceRateBelowBorder * 100).toFixed(2) + '%');
-        $(".irs-single-second").html(price_prefix + Math.max(0, currentValue - borderAmount) + ' zu ' + (serviceRateAboveBorder * 100).toFixed(2) + '%');
+        $(".irs-below-second").html(price_prefix + formatNumber(Math.min(borderAmount, currentValue)) + ' zu ' + (serviceRateBelowBorder * 100).toFixed(2) + '%');
+        $(".irs-single-second").html(price_prefix + formatNumber(Math.max(0, currentValue - borderAmount)) + ' zu ' + (serviceRateAboveBorder * 100).toFixed(2) + '%');
 
         if (serviceFee <= serviceFeeMin) {
             $(".irs-single-second").hide();
