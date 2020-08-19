@@ -98,7 +98,7 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
         );
 
         $this->vcMap = array(
-            "name" => __("Service Fee Calculator", Plugin::ID),
+            "name" => __("BV Service Fee Calculator", Plugin::ID),
             "description" => __("The service fee calculator of the conditions page.", Plugin::ID),
             "base" => $this->shortCodeId,
             "class" => "",
