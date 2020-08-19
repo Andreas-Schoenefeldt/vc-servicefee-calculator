@@ -113,7 +113,7 @@ module.exports = function(grunt) {
                 command: [
                     'rm -rf build',
                     'mkdir build',
-                    'zip -r build/vitaplace-products-<%= bump.options.setVersion %>.zip . -x "*.git*" -x "*node_modules/*" -x "*.idea*"'
+                    'zip -r build/<%= pkg.name %>-<%= bump.options.setVersion %>.zip . -x "*.git*" -x "*node_modules/*" -x "*.idea*"'
                 ].join('&&')
             }
         }

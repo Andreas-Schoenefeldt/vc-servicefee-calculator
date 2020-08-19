@@ -1,7 +1,7 @@
 {
-  "name": "vitaplace-products",
-  "version": "1.1.11",
-  "description": "A backend integration for vitaplace products",
+  "name": "belvoir-interactive-elements",
+  "version": "0.1.1",
+  "description": "Belvoir Interactive Elements",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
