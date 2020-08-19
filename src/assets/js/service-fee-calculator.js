@@ -57,7 +57,7 @@ $(document).ready(function(){
             $(".irs-single").removeClass("end");
             $(".irs-upper-text").removeClass("end");
             $(".irs-below-second").removeClass("end");
-            $(".irs-below-second").show();
+            $(".irs-single-second").show();
         }
     };
 
