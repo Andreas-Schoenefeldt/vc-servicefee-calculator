@@ -1,25 +1,30 @@
 .row {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   margin-left: $grid-gutter/-2;
   margin-right: $grid-gutter/-2;
 }
 
-.col-sm-4, .col-sm-8 {
+.col-sm-4, .col-sm-8, .col-md-6 {
   padding: 0 $grid-gutter/2;
   position: relative;
+  width: 100%;
 }
 
-.col-sm-4 {
-  width: (100% / 3);
+@media (min-width: $breakpoint-sm) {
+  .col-sm-4 {
+    width: (100% / 3);
+  }
+
+  .col-sm-8 {
+    width: (100% * 8 / 12);
+  }
 }
 
-.col-sm-8 {
-  width: (100% * 8 / 12);
-}
-
-@media (max-width: $sm-max) {
-  .col-sm-4, .col-sm-8 {
-    width: 100%;
+@media (min-width: $breakpoint-md) {
+  .col-md-6 {
+    width: 50%;
   }
 }
 

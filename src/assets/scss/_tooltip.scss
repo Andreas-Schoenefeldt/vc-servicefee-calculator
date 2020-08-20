@@ -1,0 +1,55 @@
+.fa-info-circle {
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  position: relative;
+  top: 0.2em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid $gray-3;
+
+  &:before {
+    content: 'i';
+    color: $gray-3;
+    font-size: .8em;
+    position: absolute;
+    left: 0; right: 0; bottom: 0; top: 0;
+    line-height: 1.5em;
+  }
+
+}
+
+.hover-me {
+  width: 250px;
+  border: 1px solid $gray-2;
+  position: absolute;
+  top: -165px;
+  background-color: #fff;
+  left: -20px;
+  padding-bottom: 9px;
+  display: none;
+
+  &__head {
+    background: $gray-1;
+    border-bottom: 1px solid $gray-2;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  &__body {
+    padding: 0 10px;
+  }
+
+}
+
+.calculate-notice {
+  margin-top: $grid-gutter/2;
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    .hover-me {
+      display: block;
+    }
+  }
+}

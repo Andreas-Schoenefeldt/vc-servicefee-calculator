@@ -44,18 +44,22 @@
   }
 }
 
+.range-col {
+  min-height: 100px;
+}
+
 .range-hint-container {
   height: 100px;
   max-height: 100px;
   width: 100%;
   overflow: hidden;
   transition: all .5s ease-in-out;
-  bottom: 52px;
+  bottom: 0;
   transition-duration: .32s;
   background: #eee;
   transition-property: max-height, box-shadow;
   position: absolute;
-  padding: 0 50px;
+  padding: 0 $grid-gutter;
 
   &:hover {
     height: auto;
@@ -66,5 +70,6 @@
 .range-hint > p {
   font-size: 14px;
   font-weight: 400;
-  color: #525151
+  color: #525151;
+  padding-top: 5px;
 }

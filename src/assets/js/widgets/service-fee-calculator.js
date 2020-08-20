@@ -15,8 +15,6 @@ const formatNumber = function (number) {
     return result;
 };
 
-console.log($);
-
 Widgets.register('service-fee-calculator', function (elem) {
     var rangeInput = $(elem);
 

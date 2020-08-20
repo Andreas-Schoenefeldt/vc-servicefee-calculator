@@ -2,22 +2,27 @@
 .row {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-align: start;
+      align-items: flex-start;
   margin-left: -15px;
   margin-right: -15px; }
 
-.col-sm-4, .col-sm-8 {
+.col-sm-4, .col-sm-8, .col-md-6 {
   padding: 0 15px;
-  position: relative; }
+  position: relative;
+  width: 100%; }
 
-.col-sm-4 {
-  width: 33.3333333333%; }
+@media (min-width: 768px) {
+  .col-sm-4 {
+    width: 33.3333333333%; }
+  .col-sm-8 {
+    width: 66.6666666667%; } }
 
-.col-sm-8 {
-  width: 66.6666666667%; }
-
-@media (max-width: 768px) {
-  .col-sm-4, .col-sm-8 {
-    width: 100%; } }
+@media (min-width: 992px) {
+  .col-md-6 {
+    width: 50%; } }
 
 .text-center {
   text-align: center; }
@@ -50,18 +55,21 @@
       left: 0;
       top: 0; }
 
+.range-col {
+  min-height: 100px; }
+
 .range-hint-container {
   height: 100px;
   max-height: 100px;
   width: 100%;
   overflow: hidden;
   transition: all .5s ease-in-out;
-  bottom: 52px;
+  bottom: 0;
   transition-duration: .32s;
   background: #eee;
   transition-property: max-height, box-shadow;
   position: absolute;
-  padding: 0 50px; }
+  padding: 0 30px; }
   .range-hint-container:hover {
     height: auto;
     max-height: 500px; }
@@ -69,7 +77,8 @@
 .range-hint > p {
   font-size: 14px;
   font-weight: 400;
-  color: #525151; }
+  color: #525151;
+  padding-top: 5px; }
 
 /* Ion.RangeSlider, Simple Skin
 // css version 2.0.3
@@ -353,7 +362,7 @@
   position: relative;
   min-height: 115px;
   height: auto;
-  margin-bottom: 60px; }
+  margin-bottom: 70px; }
 
 .irs-service-fee {
   position: absolute;
@@ -453,3 +462,64 @@
     text-align: center; }
   .irs-below-text {
     top: 90px !important; } }
+
+.fa-info-circle {
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  position: relative;
+  top: 0.2em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #383838; }
+  .fa-info-circle:before {
+    content: 'i';
+    color: #383838;
+    font-size: .8em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    line-height: 1.5em; }
+
+.hover-me {
+  width: 250px;
+  border: 1px solid #a4a4a4;
+  position: absolute;
+  top: -165px;
+  background-color: #fff;
+  left: -20px;
+  padding-bottom: 9px;
+  display: none; }
+  .hover-me__head {
+    background: #d7d7d7;
+    border-bottom: 1px solid #a4a4a4;
+    padding: 10px;
+    font-size: 20px; }
+  .hover-me__body {
+    padding: 0 10px; }
+
+.calculate-notice {
+  margin-top: 15px;
+  position: relative;
+  display: inline-block; }
+  .calculate-notice:hover .hover-me {
+    display: block; }
+
+.prices {
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 1px solid #383838; }
+
+.price {
+  display: block;
+  border: 1px solid #383838;
+  border-left: none;
+  padding: 5px 14px;
+  cursor: pointer; }
+  .price:hover, .price.active {
+    background: #d7d7d7; }
+
+.graph-section {
+  min-height: 400px; }

@@ -287,7 +287,7 @@
   position: relative;
   min-height: 115px;
   height: auto;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .irs-service-fee {
@@ -388,8 +388,7 @@
   margin-top: 21px;
 }
 
-
-@media (max-width: $sm-max) {
+@media (max-width: $breakpoint-sm) {
   .irs-below-text {
     position: absolute;
     font-size: 15px

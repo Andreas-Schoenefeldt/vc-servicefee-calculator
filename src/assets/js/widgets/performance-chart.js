@@ -45,6 +45,10 @@ Widgets.register('performance-chart', function (elem) {
                 format:'#%'
             },
         };
+
+        console.log(elem);
+        console.log(options);
+
         var chart = new google.visualization.ColumnChart(elem);
         chart.draw(view, options);
     };
@@ -52,18 +56,17 @@ Widgets.register('performance-chart', function (elem) {
     google.charts.load('current', {
         packages: ['corechart']
     }).then(function () {
-
         for (let i = 0; i < amountItemCount; i++) {
-            $('amount' + i).click(function () {
+            const amountEl = $('#amount' + i);
+
+            if(amountEl.hasClass('active')) {
+                renderChart(parseInt(amountEl.data('amount')));
+            }
+
+            amountEl.click(function () {
                 renderChart(parseInt($(this).data('amount')));
             });
         }
 
     });
-
-    google.charts.setOnLoadCallback( function () {
-        $('amount0').click();
-    } );
-
-
 });

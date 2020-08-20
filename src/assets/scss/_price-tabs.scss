@@ -1,0 +1,17 @@
+.prices {
+  display: flex;
+  border-left: 1px solid $gray-3;
+}
+
+.price {
+  display: block;
+  border: 1px solid $gray-3;
+  border-left: none;
+  padding: 5px 14px;
+  cursor: pointer;
+
+  &:hover, &.active {
+    background: $gray-1;
+  }
+
+}
