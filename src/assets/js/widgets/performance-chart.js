@@ -46,9 +46,6 @@ Widgets.register('performance-chart', function (elem) {
             },
         };
 
-        console.log(elem);
-        console.log(options);
-
         var chart = new google.visualization.ColumnChart(elem);
         chart.draw(view, options);
     };
@@ -64,7 +61,10 @@ Widgets.register('performance-chart', function (elem) {
             }
 
             amountEl.click(function () {
-                renderChart(parseInt($(this).data('amount')));
+                const el = $(this);
+                el.parent().find('.active').removeClass('active');
+                el.addClass('active');
+                renderChart(parseInt(el.data('amount')));
             });
         }
 
