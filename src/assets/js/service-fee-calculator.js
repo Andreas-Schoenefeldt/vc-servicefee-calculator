@@ -1,12 +1,6 @@
 import $ from './assure-jquery';
 import 'ion-rangeslider';
 
-const borderAmount = 1000000;
-const serviceFeeMin = 500;
-const serviceRateBelowBorder = 0.0075;
-const serviceRateAboveBorder = 0.0045;
-const price_prefix = "CHF ";
-
 const formatNumber = function (number) {
     let result = '';
     let stringToFormat = number.toFixed(0);
@@ -22,6 +16,13 @@ const formatNumber = function (number) {
 
 $(document).ready(function(){
     var rangeInput = $("#range_02");
+
+    const borderAmount = parseInt(rangeInput.data('border_amount'));
+    const serviceFeeMin = parseInt(rangeInput.data('min_service_fee'));
+    const serviceRateBelowBorder = parseFloat(rangeInput.data('percent_below_border')) / 100;
+    const serviceRateAboveBorder = parseFloat(rangeInput.data('percent_above_border')) / 100;
+    const price_prefix = rangeInput.data('currency_label') + " ";
+
     var xPrev = parseInt(rangeInput.data('slider_from_range'));
 
     var calulateSlider = function (data) {

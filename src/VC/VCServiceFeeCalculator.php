@@ -11,6 +11,9 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
         parent::__construct('service-fee-calculator');
 
         $this->params = array(
+
+            // Benefits Group
+
             array(
                 "type" => "textarea_html",
                 "class" => "",
@@ -27,38 +30,61 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
                 "description" => __("Product Benefits, one per Line.", Plugin::ID),
                 "group" => __("Benefits & Notes", Plugin::ID)
             ),
+
+            // Calculation group
+            [
+                'type' => 'textfield',
+                "heading" => __("Currency Label", Plugin::ID),
+                "param_name" => "currency_label",
+                "value" => "CHF",
+                "group" => __("Calculation", Plugin::ID)
+
+            ],
+
+            [
+                'type' => 'textfield',
+                "heading" => __("Border Amount", Plugin::ID),
+                "param_name" => "border_amount",
+                "value" => "1000000",
+                "group" => __("Calculation", Plugin::ID)
+
+            ],
+
+            [
+                'type' => 'textfield',
+                "heading" => __("Minimum Service Fee", Plugin::ID),
+                "param_name" => "min_service_fee",
+                "value" => "500",
+                "group" => __("Calculation", Plugin::ID)
+
+            ],
+
+            [
+                'type' => 'textfield',
+                "heading" => __("Service Fee Percent below the border amount", Plugin::ID),
+                "param_name" => "percent_below_border",
+                "value" => "0.75",
+                "group" => __("Calculation", Plugin::ID)
+
+            ],
+
+            [
+                'type' => 'textfield',
+                "heading" => __("Service Fee Percent above the border amount", Plugin::ID),
+                "param_name" => "percent_above_border",
+                "value" => "0.45",
+                "group" => __("Calculation", Plugin::ID)
+
+            ],
+
+            // Slider Group
+
             array(
                 "type" => "textfield",
                 "class" => "",
                 "heading" => __("Slider Managed Assets Text", Plugin::ID),
                 "param_name" => "managed_assets_text",
                 "value" => "Ø verwaltetes Vermögen",
-                "group" => __("Slider", Plugin::ID)
-            ),
-            /*
-            array(
-                "type" => "textfield",
-                "class" => "",
-                "heading" => __("Slider Assets Up To", Plugin::ID),
-                "param_name" => "slider_assets_up_to",
-                "value" => "zu 0.75%",
-                "group" => __("Slider", Plugin::ID)
-            ),
-            array(
-                "type" => "textfield",
-                "class" => "",
-                "heading" => __("Slider Assets Over", Plugin::ID),
-                "param_name" => "slider_assets_over",
-                "value" => "zu 0.45%",
-                "group" => __("Slider", Plugin::ID)
-            ),
-            */
-            array(
-                "type" => "textfield",
-                "class" => "",
-                "heading" => __("Service Per Annum Price", Plugin::ID),
-                "param_name" => "service_per_annum_price",
-                "value" => "CHF 500",
                 "group" => __("Slider", Plugin::ID)
             ),
             array(
@@ -85,16 +111,6 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
                 "value" => "1350000",
                 "group" => __("Slider", Plugin::ID)
             ),
-            /*
-            array(
-                "type" => "textfield",
-                "class" => "",
-                "heading" => __("Service Per Annum Percent", Plugin::ID),
-                "param_name" => "per_anum_percent",
-                "value" => "0.75",
-                "group" => __("Slider", Plugin::ID)
-            )
-            */
         );
 
         $this->vcMap = array(
@@ -117,6 +133,7 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
      */
     protected function processAttributes($atts) {
         $atts['benfits'] =  '<li>' . implode('</li><li>', explode("<br />", $atts['benfits'])) . '</li>';
+        $atts['human_border_amount_label'] = number_format(intval($atts['border_amount']) / 1000000) . ' Mio. ' .  $atts['currency_label'];
         return $atts;
     }
 }
