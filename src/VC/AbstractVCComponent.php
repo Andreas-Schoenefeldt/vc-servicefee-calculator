@@ -23,9 +23,6 @@ class AbstractVCComponent {
 
         // Use this when creating a shortcode addon
         add_shortcode( $this->shortCodeId, array( $this, 'render' ) );
-
-        // Register CSS and JS
-        add_action( 'wp_enqueue_scripts', array( $this, 'loadCssAndJs' ) );
     }
 
     public function integrateWithVC() {
@@ -46,20 +43,14 @@ class AbstractVCComponent {
     }
 
     /*
-    Load plugin css and javascript files which you may need on front end of your site
-    */
-    public function loadCssAndJs() {
-        wp_register_style( 'vc_extend_style', plugins_url('assets/css/' . $this->shortCodeId . '.css', __DIR__ . '/../../'. Plugin::ID . '.php') );
-        wp_enqueue_style( 'vc_extend_style' );
-
-        // If you need any javascript files on front end, here is how you can load them.
-        wp_enqueue_script( 'vc_extend_js', plugins_url('assets/js/' . $this->shortCodeId . '.js', __DIR__ . '/../../'. Plugin::ID . '.php'), array('jquery') );
-    }
-
-    /*
     Shortcode logic how it should be rendered
     */
     public function render( $atts, $content = null ) {
+
+        if (!is_array($atts)) {
+            $atts = [];
+        }
+
         foreach ($this->params as $paramConf) {
             if (!isset($atts[$paramConf['param_name']]) && isset($paramConf['value'])) {
                 $atts[$paramConf['param_name']] = $paramConf['value'];

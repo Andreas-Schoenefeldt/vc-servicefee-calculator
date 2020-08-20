@@ -136,7 +136,7 @@
 .lt-ie9 .irs-shadow {
   filter: alpha(opacity=30); }
 
-.irs-slider {
+.irs-handle {
   top: 23px;
   width: 27px;
   height: 27px;
@@ -149,7 +149,7 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer; }
 
-.irs-slider.state_hover, .irs-slider:hover {
+.irs-handle.state_hover, .irs-handle:hover {
   background: #FFF; }
 
 .irs-from, .irs-to, .irs-single {
@@ -243,13 +243,13 @@
   left: 0;
   width: 0; }
 
-.irs-slider {
+.irs-handle {
   position: absolute;
   display: block;
   cursor: default;
   z-index: 1; }
 
-.irs-slider.type_last {
+.irs-handle.type_last {
   z-index: 2; }
 
 .irs-from, .irs-to, .irs-single {
@@ -404,13 +404,13 @@
   background: #DCDCDC !important;
   border: none !important; }
 
-.irs-single, .irs-slider {
+.irs-single, .irs-handle {
   background: #fff !important; }
 
 .irs-line-right {
   border-radius: 0 !important; }
 
-.irs-slider {
+.irs-handle {
   border-color: #000 !important;
   box-shadow: none !important; }
 

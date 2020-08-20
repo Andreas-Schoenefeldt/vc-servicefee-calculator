@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="price-section">
+            <p>{amount_label}</p>
+            <div class="prices">
+                {amounts_html}
+            </div>
+        </div>
+        <div class="calculate-notice">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <span>{explanation_label}</span>
+            <div class="hover-me">
+                <h3>
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span>{explanation_label}</span>
+                </h3>
+                {content}
+                <span class="arrow-down"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 graph-section">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="columnchart_values"
+             class="bv-widget"
+             data-widgets="performance-chart"
+
+             data-grow_factor_5="{grow_factor_5}"
+             data-grow_factor_10="{grow_factor_10}"
+             data-grow_factor_20="{grow_factor_20}"
+             data-chart_color="{chart_color}"
+             data-amounts_count="{amounts_count}"
+             data-chart_label="{chart_label}"
+        ></div>
+    </div>
+</div>

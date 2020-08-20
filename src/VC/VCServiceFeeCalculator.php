@@ -78,7 +78,6 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
             ],
 
             // Slider Group
-
             array(
                 "type" => "textfield",
                 "class" => "",
@@ -119,7 +118,7 @@ class VCServiceFeeCalculator extends AbstractVCComponent {
             "base" => $this->shortCodeId,
             "class" => "",
             "controls" => "full",
-            "icon" => 'icon-wpb-vc-line-chart', // or css class name which you can reffer in your css file later. Example: "vc_extend_my_class"
+            "icon" => 'icon-wpb-graph', // or css class name which you can reffer in your css file later. Example: "vc_extend_my_class"
             "category" => __('Content', 'js_composer'),
             //'admin_enqueue_js' => array(plugins_url('assets/vc_extend.js', __FILE__)), // This will load js file in the VC backend editor
             //'admin_enqueue_css' => array(plugins_url('assets/vc_extend_admin.css', __FILE__)), // This will load css file in the VC backend editor

@@ -9,6 +9,8 @@ Author URI: https://github.com/Andreas-Schoenefeldt
 License: proprietary
 */
 
+use VCServiceFeeCalculator\Plugin\Plugin;
+use VCServiceFeeCalculator\VC\VCPerformanceChart;
 use VCServiceFeeCalculator\VC\VCServiceFeeCalculator;
 
 require __DIR__ . '/vendor/autoload.php';
@@ -16,5 +18,15 @@ require __DIR__ . '/vendor/autoload.php';
 // don't load directly
 if (!defined('ABSPATH')) die('-1');
 
+// Register CSS and JS
+add_action( 'wp_enqueue_scripts', function () {
+    wp_register_style( 'vc_extend_style', plugins_url('assets/css/style.css', __FILE__) );
+    wp_enqueue_style( 'vc_extend_style' );
+
+    // If you need any javascript files on front end, here is how you can load them.
+    wp_enqueue_script( 'vc_extend_js', plugins_url('assets/js/plugin.js', __FILE__), array('jquery') );
+});
+
 // initialize code
 new VCServiceFeeCalculator();
+new VCPerformanceChart();

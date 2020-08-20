@@ -10,17 +10,64 @@ class VCPerformanceChart extends AbstractVCComponent {
 
         parent::__construct('performance-chart');
 
-        $this->params = array(
+        $this->params = [
+            [
+                'type' => 'textfield',
+                "heading" => __("Amount Label above the tabs", Plugin::ID),
+                "param_name" => "amount_label",
+                "value" => "Wählen Sie einen Anlagebetrag, um die Auswirkungen zu sehen:",
+            ],
             array(
-                "type" => "textarea_html",
+                "type" => "textarea",
                 "class" => "",
-                "heading" => __("Main Description", Plugin::ID),
+                "heading" => __("Amounts", Plugin::ID),
+                "param_name" => "amounts",
+                "description" => __("Selectable amounts, one per Line.", Plugin::ID),
+            ),
+            [
+                'type' => 'textfield',
+                "heading" => __("Explanation Label", Plugin::ID),
+                "param_name" => "explanation_label",
+                "value" => "Berechnungshinweis",
+            ],
+            [
+                'type' => 'textarea_html',
+                "heading" => __("Explanation Popup Text", Plugin::ID),
                 "param_name" => "content",
-                "description" => __("The actual content", Plugin::ID),
-                "value" => "<p>Bei uns gibt es keine Ausgabeaufschläge und wir erstatten versteckte Provisionen wie z.B. Retrozessionen , Kickbacks, Bestandspflegeprovisionen direkt an Sie zurück. Die Performance Ihrer Investition verbessert sich somit signifikant.</p>"
-                // "group" => __("Benefits & Notes", Plugin::ID)
-            )
-        );
+                "value" => "<p>Annahmen: Fondsrendite 5% p. a., Ausgabeaufschlag von 5%, Haltedauer Fonds 4 Jahre, Erstattung Bestandspflegeprovisionen 0,7% p. a., Depot / Transaktionskosten 0,15% p. a., Kosten BELVOIR DIRECT lt. Preisverzeichnis</p>",
+            ],
+            [
+                "type" => 'colorpicker',
+                "heading" => __("Chart Color", Plugin::ID),
+                "param_name" => "chart_color",
+                "value" => '#89674e'
+            ],
+            [
+                "type" => 'textfield',
+                "heading" => __("Chart Label", Plugin::ID),
+                "param_name" => "chart_label",
+                "value" => 'Kostenersparnis / Mehrertrag'
+            ],
+            [
+                'type' => 'textfield',
+                "heading" => __("Grow Factor after 5 Years", Plugin::ID),
+                "param_name" => "grow_factor_5",
+                "value" => "0.1252",
+            ],
+            [
+                'type' => 'textfield',
+                "heading" => __("Grow Factor after 10 Years", Plugin::ID),
+                "param_name" => "grow_factor_10",
+                "value" => "0.2426",
+            ],
+            [
+                'type' => 'textfield',
+                "heading" => __("Grow Factor after 20 Years", Plugin::ID),
+                "param_name" => "grow_factor_20",
+                "value" => "0.6645",
+            ],
+
+        ];
 
         $this->vcMap = array(
             "name" => __("BV Performance Chart", Plugin::ID),
@@ -34,5 +81,23 @@ class VCPerformanceChart extends AbstractVCComponent {
             //'admin_enqueue_css' => array(plugins_url('assets/vc_extend_admin.css', __FILE__)), // This will load css file in the VC backend editor
             "params" => $this->params
         );
+    }
+
+    /**
+     * @param array $atts
+     * @return array
+     */
+    protected function processAttributes($atts) {
+        $atts['amounts'] = explode("<br />", $atts['amounts']);
+        $atts['amounts_count'] = count($atts['amounts']);
+
+        $amountsHtml = '';
+
+        foreach ($atts['amounts'] as $i => $amount) {
+            $amountsHtml .= '<div data-amount="' . $amount . '" class="price' . ($i === 0 ? ' active': '') . '" id="amount' . $i . '">' . number_format($amount, 0, ',', '.') . '</div>';
+        }
+
+        $atts['amounts_html'] = $amountsHtml;
+        return $atts;
     }
 }

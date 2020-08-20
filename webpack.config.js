@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        'service-fee-calculator': './src/assets/js/service-fee-calculator.js'
+        'plugin': './src/assets/js/plugin.js'
     },
     output: {
         filename: '[name].js',

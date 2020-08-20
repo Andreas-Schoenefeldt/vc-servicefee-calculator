@@ -1,4 +1,5 @@
-import $ from './assure-jquery';
+import $ from '../utils/assure-jquery';
+import Widgets from 'js-widget-hooks';
 import 'ion-rangeslider';
 
 const formatNumber = function (number) {
@@ -14,8 +15,10 @@ const formatNumber = function (number) {
     return result;
 };
 
-$(document).ready(function(){
-    var rangeInput = $("#range_02");
+console.log($);
+
+Widgets.register('service-fee-calculator', function (elem) {
+    var rangeInput = $(elem);
 
     const borderAmount = parseInt(rangeInput.data('border_amount'));
     const serviceFeeMin = parseInt(rangeInput.data('min_service_fee'));

@@ -63,7 +63,7 @@
   filter: alpha(opacity=30);
 }
 
-.irs-slider {
+.irs-handle {
   top: 23px;
   width: 27px; height: 27px;
   border: 1px solid #AAA;
@@ -75,7 +75,7 @@
   cursor: pointer;
 }
 
-.irs-slider.state_hover, .irs-slider:hover {
+.irs-handle.state_hover, .irs-handle:hover {
   background: #FFF;
 }
 
@@ -167,21 +167,21 @@
   left: 0; width: 0;
 }
 
-.irs-slider {
+.irs-handle {
   position: absolute; display: block;
   cursor: default;
   z-index: 1;
 }
-.irs-slider.single {
+.irs-handle.single {
 
 }
-.irs-slider.from {
+.irs-handle.from {
 
 }
-.irs-slider.to {
+.irs-handle.to {
 
 }
-.irs-slider.type_last {
+.irs-handle.type_last {
   z-index: 2;
 }
 
@@ -346,7 +346,7 @@
   border: none !important
 }
 
-.irs-single, .irs-slider {
+.irs-single, .irs-handle {
   background: #fff !important
 }
 
@@ -354,7 +354,7 @@
   border-radius: 0 !important
 }
 
-.irs-slider {
+.irs-handle {
   border-color: #000 !important;
   box-shadow: none !important
 }
