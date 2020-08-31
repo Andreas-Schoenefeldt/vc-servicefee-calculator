@@ -19,33 +19,48 @@
   }
 }
 
+@media (max-width: $breakpoint-md) {
+  .price-data, .price-data2 {
+    h1 {
+      font-size: 35px;
+    }
+  }
+}
+
+
 .price-data2.blur {
   opacity: .5
 }
 
-.info-lst ul {
-  list-style-type: none!important;
+.info-lst {
 
-  li {
+  margin-bottom: 40px;
 
-    padding: 0 0 0 35px;
-    position: relative;
+  ul {
+    list-style-type: none!important;
 
-    &:before {
+    li {
 
-      content: "\2714\0020";
-      color: #89674e;
-      font-size: 22px;
-      padding: 0 5px;
-      position: absolute;
-      left: 0;
-      top: 0;
+      padding: 0 0 0 35px;
+      position: relative;
+
+      &:before {
+
+        content: "\2714\0020";
+        color: #89674e;
+        font-size: 22px;
+        padding: 0 5px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
     }
   }
 }
 
 .range-col {
   min-height: 100px;
+  position: relative;
 }
 
 .range-hint-container {

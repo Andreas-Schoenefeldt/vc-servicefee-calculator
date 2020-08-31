@@ -9,10 +9,13 @@
   margin-left: -15px;
   margin-right: -15px; }
 
-.col-sm-4, .col-sm-8, .col-md-6 {
+.col-sm-4, .col-sm-6, .col-sm-8, .col-md-6, .col-xs-6, .col-xs-12 {
   padding: 0 15px;
   position: relative;
   width: 100%; }
+
+.col-xs-6 {
+  width: 50%; }
 
 @media (min-width: 768px) {
   .col-sm-4 {
@@ -38,25 +41,32 @@
     font-size: 45px;
     color: #383838; }
 
+@media (max-width: 992px) {
+  .price-data h1, .price-data2 h1 {
+    font-size: 35px; } }
+
 .price-data2.blur {
   opacity: .5; }
 
-.info-lst ul {
-  list-style-type: none !important; }
-  .info-lst ul li {
-    padding: 0 0 0 35px;
-    position: relative; }
-    .info-lst ul li:before {
-      content: "\2714\0020";
-      color: #89674e;
-      font-size: 22px;
-      padding: 0 5px;
-      position: absolute;
-      left: 0;
-      top: 0; }
+.info-lst {
+  margin-bottom: 40px; }
+  .info-lst ul {
+    list-style-type: none !important; }
+    .info-lst ul li {
+      padding: 0 0 0 35px;
+      position: relative; }
+      .info-lst ul li:before {
+        content: "\2714\0020";
+        color: #89674e;
+        font-size: 22px;
+        padding: 0 5px;
+        position: absolute;
+        left: 0;
+        top: 0; }
 
 .range-col {
-  min-height: 100px; }
+  min-height: 100px;
+  position: relative; }
 
 .range-hint-container {
   height: 100px;
@@ -362,7 +372,7 @@
   position: relative;
   min-height: 115px;
   height: auto;
-  margin-bottom: 70px; }
+  margin: 70px 0; }
 
 .irs-service-fee {
   position: absolute;

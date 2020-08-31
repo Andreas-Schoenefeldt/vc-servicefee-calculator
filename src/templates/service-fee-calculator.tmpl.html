@@ -1,49 +1,54 @@
 <div class="row bv-service-fee-calculator">
-    <div class="col-sm-4 text-center">
-        <div class="price-data">
-            <small>Vermögen bis zu {human_border_amount_label}</small>
-            <h1>{percent_below_border}% p. a.</h1>
-            <small>mindestens {min_service_fee} {currency_label} p.a.</small>
+    <div class="col-sm-8">
+        <div class="row text-center">
+            <div class="col-xs-6">
+                <div class="price-data">
+                    <small>Vermögen bis zu {human_border_amount_label}</small>
+                    <h1>{percent_below_border}% p. a.</h1>
+                    <small>mindestens {min_service_fee} {currency_label} p.a.</small>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="price-data2">
+                    <small>Vermögen über {human_border_amount_label}</small>
+                    <h1>{percent_above_border}% p. a.</h1>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-sm-4 text-center">
-        <div class="price-data2">
-            <small>Vermögen über {human_border_amount_label}</small>
-            <h1>{percent_above_border}% p. a.</h1>
+        <div class="row rangslider">
+            <div class="col-xs-12 slider-range">
+                <input type="text"
+                       class="bv-widget"
+                       data-widgets="service-fee-calculator"
+
+                       id="range_02"
+                       name="range_02"
+                       value=""
+                       data-slider_min_range="{slider_min_range}"
+                       data-slider_max_range="{slider_max_range}"
+                       data-slider_from_range="{slider_from_range}"
+                       data-service_per_annum_price="{service_per_annum_price}"
+                       data-managed_assets_text="{managed_assets_text}"
+
+                       data-min_service_fee="{min_service_fee}"
+                       data-border_amount="{border_amount}"
+                       data-currency_label="{currency_label}"
+                       data-percent_below_border="{percent_below_border}"
+                       data-percent_above_border="{percent_above_border}"
+                />
+                <span class="slider-bottom"></span>
+            </div>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="info-lst">
             <ul>{benfits}</ul>
         </div>
-    </div>
-</div>
-<div class="row rangslider">
-    <div class="col-sm-8 slider-range">
-        <input type="text"
-               class="bv-widget"
-               data-widgets="service-fee-calculator"
 
-               id="range_02"
-               name="range_02"
-               value=""
-               data-slider_min_range="{slider_min_range}"
-               data-slider_max_range="{slider_max_range}"
-               data-slider_from_range="{slider_from_range}"
-               data-service_per_annum_price="{service_per_annum_price}"
-               data-managed_assets_text="{managed_assets_text}"
-
-               data-min_service_fee="{min_service_fee}"
-               data-border_amount="{border_amount}"
-               data-currency_label="{currency_label}"
-               data-percent_below_border="{percent_below_border}"
-               data-percent_above_border="{percent_above_border}"
-        />
-        <span class="slider-bottom"></span>
-    </div>
-    <div class="col-sm-4 range-col">
-        <div class="range-hint-container">
-            <div class="range-hint small">{content}</div>
+        <div class="range-col">
+            <div class="range-hint-container">
+                <div class="range-hint small">{content}</div>
+            </div>
         </div>
     </div>
 </div>
