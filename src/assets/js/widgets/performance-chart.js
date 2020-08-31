@@ -36,6 +36,7 @@ Widgets.register('performance-chart', function (elem) {
             height: 400,
             bar: {groupWidth: "50%"},
             legend: { position: "none" },
+            tooltip: {trigger: 'none'},
             vAxis: {
                 title: chartLabel,
                 textPosition: 'none',
