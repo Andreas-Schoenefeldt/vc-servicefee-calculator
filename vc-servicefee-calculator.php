@@ -3,7 +3,7 @@
 Plugin Name: Belvoir Interactive Elements
 Plugin URI: https://github.com/Andreas-Schoenefeldt/vc-servicefee-calculator
 Description: Extends WPBakery Page Builder with interactive elements like the service fee calculator.
-Version: 1.0.2
+Version: 1.0.3
 Author: Herzschuss (Andreas Schönefeldt)
 Author URI: https://github.com/Andreas-Schoenefeldt
 License: proprietary

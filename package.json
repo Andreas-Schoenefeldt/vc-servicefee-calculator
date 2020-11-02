@@ -1,6 +1,6 @@
 {
   "name": "belvoir-interactive-elements",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Belvoir Interactive Elements",
   "main": "index.js",
   "scripts": {
